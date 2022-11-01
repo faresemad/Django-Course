@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 style="text-align:center;">Home Page</h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Author</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <th scope="row">{{post.id}}</th>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.content }}</td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.date_posted }}</td>
+                </tr>
+            {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock body %}
